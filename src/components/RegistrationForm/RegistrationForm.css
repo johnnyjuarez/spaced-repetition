@@ -1,0 +1,64 @@
+/* 
+  20fc8f
+  3f5e5a
+  38423b
+  353831
+  2d2d2a
+ */
+
+.registration-container h2 {
+  text-align: center;
+}
+
+.registration-form{ 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(21, 173, 98, 0.8);
+  width: 80vw;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 46px 0px rgba(15, 140, 79, 1);
+}
+
+.registration-form input {
+  border: none;
+  padding: 5px;
+  margin-top: 1%;
+}
+
+.registration-input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5% auto;
+}
+
+.registration-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.registration-footer button {
+  border: 1px solid #353831;
+  border-radius: 3px;
+  padding: 10px 15px;
+  background-color: #353831;
+  color: #20fc8f
+}
+
+.registration-footer button:focus, .registration-footer button:hover  {
+  background-color: #20fc8f;
+  color: #353831;
+  border: 1px solid #353831;
+}
+
+.registration-footer a {
+  color: #353831;
+  text-decoration: none;
+}
+
+.registration-footer a:hover {
+  text-decoration: underline;
+}

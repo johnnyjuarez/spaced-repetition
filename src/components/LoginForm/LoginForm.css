@@ -1,0 +1,31 @@
+.LoginForm{ 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(21, 173, 98, 0.8);
+  width: 80vw;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 46px 0px rgba(15, 140, 79, 1);
+}
+
+.LoginForm input {
+  border: none;
+  padding: 5px;
+  margin-top: 2%;
+}
+
+.LoginForm button {
+  border: 1px solid #353831;
+  border-radius: 3px;
+  padding: 5px 10px;
+  background-color: #353831;
+  color: #20fc8f;
+  width: 30%;
+  margin: 2.5% auto;
+}
+
+.LoginForm-container h2 {
+  text-align: center;
+}

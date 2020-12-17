@@ -1,0 +1,29 @@
+.header-container a{
+  text-decoration: none;
+  color: #353831;
+}
+
+.header-container a:hover {
+  text-decoration: underline;
+}
+
+.header-container h1 {
+  text-align: center;
+}
+
+.header-container nav {
+  text-align: right;
+}
+
+.header-container nav a {
+  border-bottom: 1px solid #353831;
+  border-left: 1px solid #353831;
+  border-right: 1px solid #353831;
+  padding: 5px;
+  color: #353831;
+}
+
+.header-container nav a:hover {
+  background-color: #353831;
+  color: #20fc8f;
+}
