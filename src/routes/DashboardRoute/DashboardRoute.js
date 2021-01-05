@@ -32,7 +32,7 @@ class DashboardRoute extends Component {
   render() {
     return (
       <section>
-        <h2>{this.state.language.name}</h2>
+        <h2 className='dashboard-title'>{this.state.language.name}</h2>
         <Dashboard
           passedWords={this.state.words}
           totalCount={this.state.language.total_score}

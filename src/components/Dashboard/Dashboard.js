@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import './Dashboard.css';
+
 export default class Dashboard extends Component {
   static defaultProps = {
     history: {
@@ -41,9 +43,11 @@ export default class Dashboard extends Component {
     console.log(correctCount);
     return (
       <div>
-        <Link to='/learn'>Start Practicing</Link>
-        <h3>Words to practice</h3>
-        <ul>{listOfWords}</ul>
+        <Link className='learn-btn' to='/learn'>
+          Start Practicing
+        </Link>
+        <h3 className='statement'>Words to practice</h3>
+        <ul className='list'>{listOfWords}</ul>
       </div>
     );
   }
