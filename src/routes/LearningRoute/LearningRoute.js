@@ -29,6 +29,25 @@ class LearningRoute extends Component {
       });
   }
 
+  componentDidUpdate() {
+    fetch(`${Config.API_ENDPOINT}/language/head`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        this.setState({ word: data });
+      })
+      .catch((err) => {
+        this.setState({ error: err });
+      });
+  }
+
   render() {
     return (
       <section>

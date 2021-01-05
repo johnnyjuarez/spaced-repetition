@@ -1,3 +1,22 @@
 body {
   background-color: #20fc8f;
 }
+
+.nextWord-btn {
+  display: block;
+  border: 1px solid #353831;
+  border-radius: 3px;
+  padding: 10px 15px;
+  background-color: #353831;
+  color: #20fc8f;
+  text-align: center;
+  margin: 0 auto;
+  width: 40%;
+}
+
+.nextWord-btnfocus, .nextWord-btn:hover  {
+  background-color: #20fc8f;
+  color: #353831;
+  border: 1px solid #353831;
+  box-shadow: 10px 10px 46px 0px rgba(53, 56, 49, 1);
+}

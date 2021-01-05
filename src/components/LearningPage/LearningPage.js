@@ -4,6 +4,8 @@ import TokenService from '../../services/token-service';
 import Correct from '../../components/Correct/Correct';
 import Incorrect from '../../components/Incorrect/Incorrect';
 
+import './LearningPage.css';
+
 class LearningPage extends Component {
   state = {
     userInput: '',
@@ -15,6 +17,14 @@ class LearningPage extends Component {
   inputHandler = (e) => {
     this.setState({
       userInput: e.target.value,
+    });
+  };
+
+  nextWordHandler = (e) => {
+    this.setState({
+      userInput: '',
+      data: {},
+      correct: null,
     });
   };
 
@@ -56,8 +66,8 @@ class LearningPage extends Component {
 
   render() {
     let renderHTML = (
-      <div>
-        <h2>Learning Page</h2>
+      <div className='learn-container'>
+        <h2 className='learn-title'>Learning Page</h2>
         <h3>
           Translate the word: <span>{this.props.wordData.nextWord}</span>
         </h3>
@@ -89,9 +99,9 @@ class LearningPage extends Component {
     return (
       <div>
         {this.state.correct === true ? (
-          <Correct />
+          <Correct nextWord={this.nextWordHandler} />
         ) : this.state.correct === false ? (
-          <Incorrect />
+          <Incorrect nextWord={this.nextWordHandler} />
         ) : (
           renderHTML
         )}
