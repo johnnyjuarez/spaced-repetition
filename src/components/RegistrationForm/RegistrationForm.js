@@ -7,7 +7,10 @@ import './RegistrationForm.css';
 
 class RegistrationForm extends Component {
   static defaultProps = {
-    onRegistrationSuccess: () => {},
+    onRegistrationSuccess: () => { },
+    history: {
+      push: () => { }
+    }
   };
 
   state = { error: null };
@@ -15,6 +18,7 @@ class RegistrationForm extends Component {
   firstInput = React.createRef();
 
   handleSubmit = (ev) => {
+    const { history } = this.props;
     ev.preventDefault();
     const { name, username, password } = ev.target;
     AuthApiService.postUser({
@@ -23,10 +27,17 @@ class RegistrationForm extends Component {
       password: password.value,
     })
       .then((user) => {
-        name.value = '';
-        username.value = '';
-        password.value = '';
-        this.props.onRegistrationSuccess();
+        AuthApiService.postLogin({
+          username: username.value,
+          password: password.value,
+        })
+          .then(() => {
+            name.value = '';
+            username.value = '';
+            password.value = '';
+            history.push('/');
+            // this.props.onRegistrationSuccess();
+          })
       })
       .catch((res) => {
         this.setState({ error: res.error });

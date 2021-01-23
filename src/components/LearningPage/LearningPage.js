@@ -99,12 +99,12 @@ class LearningPage extends Component {
     return (
       <div>
         {this.state.correct === true ? (
-          <Correct nextWord={this.nextWordHandler} />
+          <Correct nextWord={this.nextWordHandler} correctWord={this.state.data.answer} />
         ) : this.state.correct === false ? (
-          <Incorrect nextWord={this.nextWordHandler} />
+          <Incorrect nextWord={this.nextWordHandler} correctWord={this.state.data.answer} />
         ) : (
-          renderHTML
-        )}
+              renderHTML
+            )}
       </div>
     );
   }
