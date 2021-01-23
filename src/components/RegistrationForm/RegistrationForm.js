@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Input, Required, Label } from '../Form/Form';
 import AuthApiService from '../../services/auth-api-service';
+import UserContext from '../../contexts/UserContext';
 import Button from '../Button/Button';
 import './RegistrationForm.css';
 
@@ -12,6 +13,8 @@ class RegistrationForm extends Component {
       push: () => { }
     }
   };
+
+  static contextType = UserContext;
 
   state = { error: null };
 
@@ -31,12 +34,10 @@ class RegistrationForm extends Component {
           username: username.value,
           password: password.value,
         })
-          .then(() => {
-            name.value = '';
-            username.value = '';
-            password.value = '';
-            history.push('/');
-            // this.props.onRegistrationSuccess();
+          .then((res) => {
+            console.log('thenblock hit')
+            this.context.processLogin(res.authToken);
+            this.props.onRegistrationSuccess();
           })
       })
       .catch((res) => {
